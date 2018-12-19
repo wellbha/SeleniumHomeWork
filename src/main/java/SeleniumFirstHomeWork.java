@@ -92,7 +92,14 @@ public class SeleniumFirstHomeWork {
         //locating the currency field and then selecting the Euro value
         driver.findElement(By.xpath("//div/div[2]/ul[@class='top-menu']/li[5]/a[@href='/books']"));
         currency.selectByValue("https://demo.nopcommerce.com/changecurrency/6?returnurl=%2F");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.findElement(By.linkText("Jewelry")).click();
+
+        //checking if the Euro price loaded
+        String expectedPrice = "Ђ309.60";
+        String actualPrice = driver.findElement(By.xpath("//div[@data-productid='41']/div[2]/div[3]/div/span[@class='price actual-price']")).getText();
+        Assert.assertEquals("Test case : Test Fail",expectedPrice,actualPrice);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
         driver.close();
     }
     @Test   // Only register members can send emails case
