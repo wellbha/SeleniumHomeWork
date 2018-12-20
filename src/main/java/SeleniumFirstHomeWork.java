@@ -150,7 +150,7 @@ public class SeleniumFirstHomeWork {
         driver.findElement(By.xpath("//div[@data-productid='38']/div[2]/div[3]/div[2]/input[@value='Add to compare list']")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div[@id='bar-notification']/p/a")).click();
-
+        driver.quit();
 
     }
 }
