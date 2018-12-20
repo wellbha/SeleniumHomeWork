@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumFirstHomeWork {
-    //public static void main(String[] args) {
+
         @Test        //user registration
 
         public void run1(){
@@ -74,7 +75,7 @@ public class SeleniumFirstHomeWork {
         driver.findElement(By.linkText("Log out"));
 
         //closing the webpage
-        driver.close();
+        driver.quit();
 
     }
     @Test // changing the values from US Dollar to Euro
@@ -98,9 +99,9 @@ public class SeleniumFirstHomeWork {
         String expectedPrice = "Ђ309.60";
         String actualPrice = driver.findElement(By.xpath("//div[@data-productid='41']/div[2]/div[3]/div/span[@class='price actual-price']")).getText();
         Assert.assertEquals("Test case : Test Fail",expectedPrice,actualPrice);
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        driver.close();
+
+        driver.quit();
     }
     @Test   // Only register members can send emails case
     public void run3(){
@@ -134,7 +135,7 @@ public class SeleniumFirstHomeWork {
         String expectedResult = "Only registered customers can use email a friend feature";
         String actualResult = driver.findElement(By.xpath("//div[@class=\"message-error validation-summary-errors\"]/ul/li")).getText();
         Assert.assertEquals("Test case : Test Fail",expectedResult,actualResult);
-        driver.close();
+        driver.quit();
 
     }
 
