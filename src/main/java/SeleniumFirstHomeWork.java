@@ -137,5 +137,20 @@ public class SeleniumFirstHomeWork {
         driver.close();
 
     }
+    @Test  // two product comparison
+        public void run4() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver","src\\browserdriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().window().fullscreen();
+        driver.get("https://demo.nopcommerce.com/");
+        driver.findElement(By.linkText("Books")).click();
+        driver.findElement(By.xpath("//div[@data-productid='37']/div[2]/div[3]/div[2]/input[@value='Add to compare list']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//div[@data-productid='38']/div[2]/div[3]/div[2]/input[@value='Add to compare list']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//div[@id='bar-notification']/p/a")).click();
 
+
+    }
 }
