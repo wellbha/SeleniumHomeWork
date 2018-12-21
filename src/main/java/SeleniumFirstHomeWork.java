@@ -2,9 +2,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.*;
 
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
@@ -13,6 +14,7 @@ import java.text.FieldPosition;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumFirstHomeWork {
@@ -146,11 +148,19 @@ public class SeleniumFirstHomeWork {
         driver.get("https://demo.nopcommerce.com/");
         driver.findElement(By.linkText("Books")).click();
         driver.findElement(By.xpath("//div[@data-productid='37']/div[2]/div[3]/div[2]/input[@value='Add to compare list']")).click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        TimeUnit.SECONDS.sleep(1);
+        //WebDriverWait wait=new WebDriverWait(driver, 500);
+        //WebElement link = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-productid='38']/div[2]/div[3]/div[2]/input[@value='Add to compare list']")));
         driver.findElement(By.xpath("//div[@data-productid='38']/div[2]/div[3]/div[2]/input[@value='Add to compare list']")).click();
-        Thread.sleep(3000);
+        //link.click();
+        TimeUnit.SECONDS.sleep(1);
+        //Thread.sleep(3000);
+        //WebElement link = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='bar-notification']/p/a")));
+
+        //link.click();
         driver.findElement(By.xpath("//div[@id='bar-notification']/p/a")).click();
-        driver.quit();
+        //driver.quit();
 
     }
 }
