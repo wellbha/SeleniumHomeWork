@@ -160,7 +160,7 @@ public class SeleniumFirstHomeWork {
 
         //link.click();
         driver.findElement(By.xpath("//div[@id='bar-notification']/p/a")).click();
-        //driver.quit();
+        driver.quit();
 
     }
 }
